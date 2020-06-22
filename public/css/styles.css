@@ -1,0 +1,10 @@
+/* Set a background image by replacing the URL below */
+body {
+    background: url('https://s.hdnux.com/photos/22/17/31/4781686/3/rawImage.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+
