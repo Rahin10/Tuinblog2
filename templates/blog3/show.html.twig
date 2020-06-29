@@ -17,7 +17,11 @@
             </tr>
             <tr>
                 <th>Beschrijving</th>
-                <td>{{ blog3.Beschrijving }}</td>
+                <td>{{ blog3.Beschrijving | raw }}</td>
+            </tr>
+            <tr>
+                <th>Afbeelding</th>
+                <td><img class="image2" src="{{ vich_uploader_asset(blog3, 'imageFile') }}"  alt="imageFile"/></td>
             </tr>
             <tr>
                 <th>Auteur</th>

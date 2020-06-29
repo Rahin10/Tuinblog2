@@ -5,9 +5,34 @@
 {% block body %}
 <h1>Welkom op mijn tuin blog !</h1>
 
+    <div class="row">
+    {% for blog3 in blog3 %}
+
+        <div class="col-lg-4 col-sm-6 mb-4">
+            <div class="card h-100">
+                <img class="image-home" src="{{ vich_uploader_asset(blog3, 'imageFile') }}" alt="imageName"/>
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <h4 class="card-title">{{ blog3.titel }}</h4>
+                    </h4>
+                    <p class="card-text">{{ blog3.beschrijving | raw }}</p>
+                    <div class="btn-group">
+                        <button type="button" onclick="window.location.href='{{ path('blog3_show', {'id': blog3.id}) }}'" class="btn btn-sm btn-outline-secondary">Verder lezen</button>
+                        {% if app.user %}
+                            <button type="button" onclick="window.location.href='{{ path('blog3_edit', {'id': blog3.id}) }}'" class="btn btn-sm btn-outline-secondary">Bewerken</button>
+                        {% endif %}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
     <a href="/register" class="btn btn-lg btn-success">Registeren</a>
     <a href="/login" class="btn btn-lg btn-success">Login</a>
     <a href="/blog3" class="btn btn-lg btn-success">Blogs</a>
+
+
 
 
 {% endblock %}

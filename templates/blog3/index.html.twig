@@ -12,7 +12,8 @@
                 <th>Titel</th>
                 <th>Beschrijving</th>
                 <th>Auteur</th>
-                <th>actions</th>
+                <th>afbeelding</th>
+                <th>acties</th>
             </tr>
         </thead>
         <tbody>
@@ -20,8 +21,9 @@
             <tr>
                 <td>{{ blog3.id }}</td>
                 <td>{{ blog3.Titel }}</td>
-                <td>{{ blog3.Beschrijving }}</td>
+                <td>{{ blog3.Beschrijving | raw }}</td>
                 <td>{{ blog3.Auteur }}</td>
+                <td><img class="image2" src="{{ vich_uploader_asset(blog3, 'imageFile') }}"  alt="imageName"/></td>
                 <td>
                     <a href="{{ path('blog3_show', {'id': blog3.id}) }}">show</a>
                     <a href="{{ path('blog3_edit', {'id': blog3.id}) }}">edit</a>
